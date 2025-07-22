@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import rasterio
 import numpy as np
 import matplotlib.pyplot as plt
