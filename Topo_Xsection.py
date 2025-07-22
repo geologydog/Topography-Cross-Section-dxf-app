@@ -145,9 +145,3 @@ else:
     if not all([start_x, start_y, end_x, end_y]):
         st.info("Please provide all coordinate inputs.")
 
-
-# In[ ]:
-
-
-
-
