@@ -98,6 +98,9 @@ if uploaded_file is not None and all([start_x, start_y, end_x, end_y]):
                     start_row, start_col = rasterio.transform.rowcol(transform, start_x_val, start_y_val)
                     end_row, end_col = rasterio.transform.rowcol(transform, end_x_val, end_y_val)
 
+                    # Compute true section length
+                    true_geographic_length = math.hypot(end_x_val - start_x_val, end_y_val - start_y_val)
+
                     # Round to nearest integer for pixel coordinates
                     start_pixel = (int(round(start_row)), int(round(start_col)))
                     end_pixel = (int(round(end_row)), int(round(end_col)))
