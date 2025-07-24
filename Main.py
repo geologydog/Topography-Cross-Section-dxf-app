@@ -114,7 +114,8 @@ if uploaded_file is not None and all([start_x, start_y, end_x, end_y]):
                     # Export cross-section to DXF
                     doc = ezdxf.new(dxfversion='R2010')
                     msp = doc.modelspace()
-                    points = [(i, elevation) for i, elevation in enumerate(elevation_values)]
+                    pixel_spacing = true_geographic_length / (len(elevation_values) - 1)
+                    points = [(i * pixel_spacing, elevation) for i, elevation in enumerate(elevation_values)]
                     msp.add_lwpolyline(points, dxfattribs={'layer': 'cross_section'})
 
                     # Save DXF to temporary file
